@@ -1,24 +1,36 @@
 {
-    "name": "time-undo",
-    "displayName": "time undo",
+    "name": "big-undo",
+    "displayName": "big undo",
+    "publisher": "PaulSchaaf",
     "description": "resets file to earlier state",
     "version": "0.0.1",
     "engines": {
-        "vscode": "^1.84.0"
+        "vscode": "^1.70.0"
     },
     "categories": [
         "Other"
     ],
-    "activationEvents": [],
+    "activationEvents": [
+        "onStartupFinished"
+    ],
     "main": "./out/extension.js",
     "contributes": {
-        "configuration": {},
-        "commands": [
-            {
-                "command": "time-undo.undo",
-                "title": "Undo"
-            }
-        ]
+        "configuration": {
+            "title": "big-undo",
+            "properties": {
+                "big-undo.maximumSnapshotsSaved": {
+                    "type": "number",
+                    "default": 10,
+                    "description": "How many snapshots the extension will save of the currently active file"
+                }
+            },
+            "commands": [
+                {
+                    "command": "big-undo.undo",
+                    "title": "Undo"
+                }
+            ]
+        }
     },
     "scripts": {
         "vscode:prepublish": "npm run compile",
