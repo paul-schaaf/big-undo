@@ -7,7 +7,7 @@
         "url": "https://github.com/paul-schaaf/big-undo"
     },
     "description": "resets file to earlier state",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "engines": {
         "vscode": "^1.70.0"
     },
